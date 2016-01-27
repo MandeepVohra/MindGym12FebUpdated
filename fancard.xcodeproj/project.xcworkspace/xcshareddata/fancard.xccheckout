@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A2CA427F-1379-43EF-9941-FC7B102B43EA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>fancard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>84E75EFE39A28136C2991507E1B1B0536E8927C1</key>
+		<string>https://git.oschina.net/kenshinLEE/MindGym.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>fancard/fancard.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>84E75EFE39A28136C2991507E1B1B0536E8927C1</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/kenshinLEE/MindGym.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>84E75EFE39A28136C2991507E1B1B0536E8927C1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>84E75EFE39A28136C2991507E1B1B0536E8927C1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MindGym</string>
+		</dict>
+	</array>
+</dict>
+</plist>
