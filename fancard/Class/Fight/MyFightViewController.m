@@ -810,7 +810,8 @@
 
         //userId == 0: not login
     } else if (userId == 0) {
-        if ([chosenAns isEqualToString:self.question.rightAns]) {
+        if ([chosenAns isEqualToString:self.question.rightAns])
+        {
             [self answerResult:YES now:remainTime];
 
         } else {

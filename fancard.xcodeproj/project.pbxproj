@@ -30,11 +30,18 @@
 		2EFDED27CB4179CD1CE077A2 /* Miss-3-point.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2EFDEE2669C05923F4CCCEF0 /* Miss-3-point.mp4 */; };
 		2EFDED79DF315CC032278FE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EFDEEE98A22C568B3A734A7 /* GoogleService-Info.plist */; };
 		2EFDEFBEC1BCC8D903B1EF54 /* UILabel+DynamicFontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFDEF0AB3E7EA166A55E0B8 /* UILabel+DynamicFontSize.m */; };
+		320B19091C687994003F22E6 /* GPURLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 320B19081C687994003F22E6 /* GPURLRequestManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3234506B1C6112E9002700A1 /* YesterDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234506A1C6112E9002700A1 /* YesterDayViewController.m */; };
 		32612CB11C5905520052E6C9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32612CB01C5905520052E6C9 /* MainViewController.m */; };
+		32CD10B71C5A549E00D8A8E8 /* FrendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CD10B51C5A549E00D8A8E8 /* FrendsTableViewCell.m */; };
+		32CD10B81C5A549E00D8A8E8 /* FrendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32CD10B61C5A549E00D8A8E8 /* FrendsTableViewCell.xib */; };
 		32D1FE111C58C95800EC1858 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D1FE0F1C58C95800EC1858 /* Default.png */; };
 		32D1FE121C58C95800EC1858 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D1FE101C58C95800EC1858 /* Default-568h@2x.png */; };
 		32D1FE141C58D40200EC1858 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32D1FE131C58D40200EC1858 /* Montserrat-Regular.otf */; };
 		32D1FE161C58F54C00EC1858 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32D1FE151C58F54B00EC1858 /* Montserrat-Light.otf */; };
+		32F702051C5CF36000A6995A /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32F702041C5CF36000A6995A /* Montserrat-SemiBold.otf */; };
+		32F9B0771C6214420049B9F9 /* LevelsFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9B0761C6214420049B9F9 /* LevelsFriendsViewController.m */; };
+		32F9B07E1C62676D0049B9F9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9B07D1C62676D0049B9F9 /* ProfileViewController.m */; };
 		4145202788959B401E41F055 /* MG38.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41452BB3EAD39659C1C206EA /* MG38.mp3 */; };
 		4145207A7331B13667F495D4 /* MG65_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41452269A107957FA45F4363 /* MG65_4.mp3 */; };
 		414520B53F37135746DC115F /* BoxScore.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41452A8416D4020EEE443838 /* BoxScore.mp3 */; };
@@ -366,12 +373,24 @@
 		2EFDEF0AB3E7EA166A55E0B8 /* UILabel+DynamicFontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+DynamicFontSize.m"; path = "fancard/category/UILabel+DynamicFontSize.m"; sourceTree = SOURCE_ROOT; };
 		2EFDEF9D41010C8537C037D1 /* pic_boxScore_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic_boxScore_0.png; sourceTree = "<group>"; };
 		2EFDEFFD54FB7634E5A151D4 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		320B19071C687994003F22E6 /* GPURLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPURLRequestManager.h; sourceTree = "<group>"; };
+		320B19081C687994003F22E6 /* GPURLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPURLRequestManager.m; sourceTree = "<group>"; };
+		323450691C6112E8002700A1 /* YesterDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterDayViewController.h; sourceTree = "<group>"; };
+		3234506A1C6112E9002700A1 /* YesterDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterDayViewController.m; sourceTree = "<group>"; };
 		32612CAF1C5905520052E6C9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		32612CB01C5905520052E6C9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		32CD10B41C5A549E00D8A8E8 /* FrendsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrendsTableViewCell.h; sourceTree = "<group>"; };
+		32CD10B51C5A549E00D8A8E8 /* FrendsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrendsTableViewCell.m; sourceTree = "<group>"; };
+		32CD10B61C5A549E00D8A8E8 /* FrendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrendsTableViewCell.xib; sourceTree = "<group>"; };
 		32D1FE0F1C58C95800EC1858 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		32D1FE101C58C95800EC1858 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		32D1FE131C58D40200EC1858 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		32D1FE151C58F54B00EC1858 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		32F702041C5CF36000A6995A /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		32F9B0751C6214420049B9F9 /* LevelsFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsFriendsViewController.h; sourceTree = "<group>"; };
+		32F9B0761C6214420049B9F9 /* LevelsFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelsFriendsViewController.m; sourceTree = "<group>"; };
+		32F9B07C1C62676D0049B9F9 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = "fancard/NewClassMainView/untitled folder/ProfileViewController.h"; sourceTree = SOURCE_ROOT; };
+		32F9B07D1C62676D0049B9F9 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = "fancard/NewClassMainView/untitled folder/ProfileViewController.m"; sourceTree = SOURCE_ROOT; };
 		41452005C449056BAA84F7FD /* MG25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MG25.mp3; sourceTree = "<group>"; };
 		4145200B6EF4F9E166BD0A99 /* emailSignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emailSignInVC.m; sourceTree = "<group>"; };
 		41452018BAC5A3E749FFF213 /* MG45.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MG45.mp3; sourceTree = "<group>"; };
@@ -812,13 +831,72 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		320B19051C687994003F22E6 /* GPUWebClass */ = {
+			isa = PBXGroup;
+			children = (
+				320B19061C687994003F22E6 /* GPURLManager */,
+			);
+			path = GPUWebClass;
+			sourceTree = "<group>";
+		};
+		320B19061C687994003F22E6 /* GPURLManager */ = {
+			isa = PBXGroup;
+			children = (
+				320B19071C687994003F22E6 /* GPURLRequestManager.h */,
+				320B19081C687994003F22E6 /* GPURLRequestManager.m */,
+			);
+			path = GPURLManager;
+			sourceTree = "<group>";
+		};
+		323450681C611228002700A1 /* YesterdayAnswerClass */ = {
+			isa = PBXGroup;
+			children = (
+				323450691C6112E8002700A1 /* YesterDayViewController.h */,
+				3234506A1C6112E9002700A1 /* YesterDayViewController.m */,
+			);
+			path = YesterdayAnswerClass;
+			sourceTree = "<group>";
+		};
 		32612CAE1C5905400052E6C9 /* NewClassMainView */ = {
 			isa = PBXGroup;
 			children = (
+				320B19051C687994003F22E6 /* GPUWebClass */,
+				32F9B0781C6250D70049B9F9 /* ProfileScreen */,
+				32F9B0741C62142B0049B9F9 /* LevelFriendNewClass */,
+				323450681C611228002700A1 /* YesterdayAnswerClass */,
+				32CD10B11C5A548400D8A8E8 /* FriendsCell */,
 				32612CAF1C5905520052E6C9 /* MainViewController.h */,
 				32612CB01C5905520052E6C9 /* MainViewController.m */,
 			);
 			path = NewClassMainView;
+			sourceTree = "<group>";
+		};
+		32CD10B11C5A548400D8A8E8 /* FriendsCell */ = {
+			isa = PBXGroup;
+			children = (
+				32CD10B41C5A549E00D8A8E8 /* FrendsTableViewCell.h */,
+				32CD10B51C5A549E00D8A8E8 /* FrendsTableViewCell.m */,
+				32CD10B61C5A549E00D8A8E8 /* FrendsTableViewCell.xib */,
+			);
+			path = FriendsCell;
+			sourceTree = "<group>";
+		};
+		32F9B0741C62142B0049B9F9 /* LevelFriendNewClass */ = {
+			isa = PBXGroup;
+			children = (
+				32F9B0751C6214420049B9F9 /* LevelsFriendsViewController.h */,
+				32F9B0761C6214420049B9F9 /* LevelsFriendsViewController.m */,
+			);
+			path = LevelFriendNewClass;
+			sourceTree = "<group>";
+		};
+		32F9B0781C6250D70049B9F9 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				32F9B07C1C62676D0049B9F9 /* ProfileViewController.h */,
+				32F9B07D1C62676D0049B9F9 /* ProfileViewController.m */,
+			);
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 		414520ACF25F79938BFFD181 /* SoundEngine */ = {
@@ -880,6 +958,7 @@
 		4145221F34B76E74FF4CA60E /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				32F702041C5CF36000A6995A /* Montserrat-SemiBold.otf */,
 				32D1FE151C58F54B00EC1858 /* Montserrat-Light.otf */,
 				32D1FE131C58D40200EC1858 /* Montserrat-Regular.otf */,
 				414527B784F498507D7AD0E5 /* Asap-Bold.ttf */,
@@ -1664,6 +1743,7 @@
 				C6A08C9F1BE35B7700EFDD7D /* icon_star_2@2x.png in Resources */,
 				414522412596A79B02E4527A /* rotating_ball_38@2x.png in Resources */,
 				41452BC5A6E27356BB6F401D /* rotating_ball_31@2x.png in Resources */,
+				32F702051C5CF36000A6995A /* Montserrat-SemiBold.otf in Resources */,
 				414521BA429FFB63FCD164AC /* rotating_ball_00@2x.png in Resources */,
 				4145242D4451592C2BA0E8CD /* rotating_ball_35@2x.png in Resources */,
 				C6A08C851BE2414400EFDD7D /* icon_privacy.png in Resources */,
@@ -1795,6 +1875,7 @@
 				32D1FE161C58F54C00EC1858 /* Montserrat-Light.otf in Resources */,
 				41452866C771C2AA4A31F62A /* MG15.mp3 in Resources */,
 				41452D35BF671058AF0A25D9 /* MG74_4.mp3 in Resources */,
+				32CD10B81C5A549E00D8A8E8 /* FrendsTableViewCell.xib in Resources */,
 				C6A5F83E1BE36DA400BA3F41 /* dot_gray.png in Resources */,
 				41452ABB473AA899C3AFC207 /* MG46.mp3 in Resources */,
 				41452459731F55400357DA83 /* MG77_4.mp3 in Resources */,
@@ -1899,6 +1980,7 @@
 				41452F3D5D5AA2229AD189FB /* UIButton+Extra.m in Sources */,
 				41452F738C2B30DE8DDD3C85 /* UIView+Round.m in Sources */,
 				414523F4CCC73A13F7399695 /* UIView+FrameCategory.m in Sources */,
+				32CD10B71C5A549E00D8A8E8 /* FrendsTableViewCell.m in Sources */,
 				41452A2F1933027516B46AE4 /* emailSignInVC.m in Sources */,
 				C689A40A1BDF226B00B0C7B4 /* MTextField.m in Sources */,
 				414526CBB5A65F0D3CAC01AE /* emailSignUpVC.m in Sources */,
@@ -1912,6 +1994,7 @@
 				41452844AA5A6095AC0576C3 /* GetChallenge.m in Sources */,
 				C6C2974C1BE9A357003A797A /* FindFriendViewController.m in Sources */,
 				C69CF9371BE85CF600200229 /* BrowseAnsModel.m in Sources */,
+				3234506B1C6112E9002700A1 /* YesterDayViewController.m in Sources */,
 				C6EFD3DD1BFBFF44009AEFFC /* SeasonTotalPoints.m in Sources */,
 				4145243D6311C701339107DA /* MyFightViewController.m in Sources */,
 				41452813A9F7E129792491B1 /* NFTrivaBarView.m in Sources */,
@@ -1934,6 +2017,7 @@
 				41452622F6E8FD4D3C06D69E /* DDMenuController.m in Sources */,
 				C6EFD3D81BFB2C25009AEFFC /* ItemInfoView.m in Sources */,
 				414525D5F7AD846E70E7566C /* MBProgressHUD.m in Sources */,
+				32F9B07E1C62676D0049B9F9 /* ProfileViewController.m in Sources */,
 				C6A08C7B1BE209F800EFDD7D /* WelcomeViewController.m in Sources */,
 				4145297E6D07659662D72824 /* XOSplashVideoController.m in Sources */,
 				C6EFD3DA1BFB2C25009AEFFC /* VSInfoViewController.m in Sources */,
@@ -1942,6 +2026,7 @@
 				41452DD1DEF812D2E07EFC7D /* CMOpenALSoundManager.m in Sources */,
 				41452C87F4E016DC20EB791A /* CMOpenALSound.m in Sources */,
 				C67E28631BDFA6C900D40830 /* UITextField+Custom.m in Sources */,
+				32F9B0771C6214420049B9F9 /* LevelsFriendsViewController.m in Sources */,
 				414522787706349E517BD353 /* DebugOutput.m in Sources */,
 				C6BD01651BF5ECF700DCA6B8 /* NSString+StringFormatDate.m in Sources */,
 				4145226168476F7B8AD6D290 /* CMOpenALSoundManager+Singleton.m in Sources */,
@@ -1961,6 +2046,7 @@
 				2EFDEA81E2B402113B07572A /* UserInfo.m in Sources */,
 				2EFDEC04BD5E016A6CF8CFCA /* LanbaooBaseModel.m in Sources */,
 				2EFDE153047D788B679F1081 /* UserRankIndex.m in Sources */,
+				320B19091C687994003F22E6 /* GPURLRequestManager.m in Sources */,
 				D8625FC5743C17F9379EF01E /* LevelsFindFriendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2022,7 +2108,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "58d60f5a-7034-4c89-8472-2d7d9e6b460c";
+				PROVISIONING_PROFILE = "2e8ca899-3954-47f6-bf59-1b55de22a7b2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2058,7 +2144,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "58d60f5a-7034-4c89-8472-2d7d9e6b460c";
+				PROVISIONING_PROFILE = "2e8ca899-3954-47f6-bf59-1b55de22a7b2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2086,7 +2172,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BathHubTest.Device;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58d60f5a-7034-4c89-8472-2d7d9e6b460c";
+				PROVISIONING_PROFILE = "2e8ca899-3954-47f6-bf59-1b55de22a7b2";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
@@ -2100,6 +2186,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Adnan (2W8C692XA6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Muhammad Adnan (2W8C692XA6)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2114,7 +2201,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BathHubTest.Device;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58d60f5a-7034-4c89-8472-2d7d9e6b460c";
+				PROVISIONING_PROFILE = "2e8ca899-3954-47f6-bf59-1b55de22a7b2";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
@@ -2125,6 +2212,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Adnan (2W8C692XA6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Muhammad Adnan (2W8C692XA6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2136,7 +2224,7 @@
 				INFOPLIST_FILE = fancardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58d60f5a-7034-4c89-8472-2d7d9e6b460c";
+				PROVISIONING_PROFILE = "2e8ca899-3954-47f6-bf59-1b55de22a7b2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fancard.app/fancard";
 			};
 			name = Debug;
@@ -2153,7 +2241,7 @@
 				INFOPLIST_FILE = fancardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58d60f5a-7034-4c89-8472-2d7d9e6b460c";
+				PROVISIONING_PROFILE = "2e8ca899-3954-47f6-bf59-1b55de22a7b2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fancard.app/fancard";
 			};
 			name = Release;

@@ -101,7 +101,7 @@
 //upper view
     _upperView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight / 2)];
     _upperView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_upperView];
+    //[self.view addSubview:_upperView];
 
 //----------------------------mine info-------------------------------
     _userInfoView = [[UserInformation alloc] initWithFrame:CGRectMake(1, 15, kScreenWidth, _upperView.height - 15 - 70)];
@@ -137,7 +137,7 @@
 //below view
     _belowView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight / 2, kScreenWidth, kScreenHeight / 2)];
     _belowView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_belowView];
+   // [self.view addSubview:_belowView];
 
 //--------------------------Robots information or other information---------------------------------
     _oppInfoView = [[UserInformation alloc] initWithFrame:CGRectMake(1, 15, kScreenWidth, _belowView.height - 15 - 70)];
@@ -375,17 +375,22 @@
  * Show my information ( in the next half of the screen ) ; 24 seconds countdown, after resume timing (layout adjust )
  * Click on "join game" send action = @ "begin", hidden time, show opponent
  */
-
+    [self UIAcceptChallenge];
+    
     if (_isChallenger) {
         _isChallenger = NO;
         NSLog(@"isChallenger");
         [_upperView addSubview:_userInfoView];
         [_belowView addSubview:_waiting];
         [self.view addSubview:_iconVs];
+        // [self.MyacceptChallengeImageView sd_setImageWithURL:[NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SaveImageUrl"]] placeholderImage:[UIImage imageNamed:@"PlaceholderImageWithoutBorder"]];
+        //[self.MyNameLabel setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"SaveUserName"]];
         waitCD24 = 24;
         waitTimer24 = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(time24) userInfo:nil repeats:YES];
 
-    } else if (_isAccept) {
+    }
+    else if (_isAccept)
+    {
         _isAccept = NO;
         NSLog(@"isAccept");
         [_belowView addSubview:_userInfoView];
@@ -396,7 +401,7 @@
         _labelShifly.text = @"Before Challenge expires!";
 
         joinTimer24 = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(joinTime) userInfo:nil repeats:YES];
-
+        [self.AcceptChallengeView setHidden:NO];
         [self acceptChallenge];
 
     } else {
@@ -428,6 +433,11 @@
       parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"JSON: %@", responseObject);
+             NSDictionary *data = responseObject;
+             UserInfo *userInfo = [UserInfo objectWithKeyValues:data[@"data"]];
+               [self.UseracceptChallengeImageView sd_setImageWithURL:[NSURL URLWithString:[userInfo valueForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"PlaceholderImageWithoutBorder"]];
+             [self.UserNameLabel setText:[NSString stringWithFormat:@"%@ %@",userInfo.firstname,userInfo.lastname]];
+             
 
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"Error: %@", error);
@@ -672,6 +682,229 @@
                 NSLog(@"Error: %@", error);
                 [self getQuestions];
             }];
+}
+
+-(void)UIAcceptChallenge{
+    
+    self.AcceptChallengeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.AcceptChallengeView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"AcceptChallengeScreen"]]];
+    [self.view addSubview:self.AcceptChallengeView];
+    [self.AcceptChallengeView setHidden:YES];
+    
+    self.MyacceptChallengeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(31, 49, 70, 70)];
+    [self.MyacceptChallengeImageView sd_setImageWithURL:[NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"SaveImageUrl"]] placeholderImage:[UIImage imageNamed:@""]];
+    [[self.MyacceptChallengeImageView layer] setCornerRadius:self.MyacceptChallengeImageView.frame.size.width/2];
+    [self.MyacceptChallengeImageView setClipsToBounds:YES];
+    [self.AcceptChallengeView addSubview:self.MyacceptChallengeImageView];
+    
+    
+    self.UseracceptChallengeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(219, 49, 70, 70)];
+    [[self.UseracceptChallengeImageView layer] setCornerRadius:self.MyacceptChallengeImageView.frame.size.width/2];
+    [self.UseracceptChallengeImageView setClipsToBounds:YES];
+    [self.AcceptChallengeView addSubview:self.UseracceptChallengeImageView];
+
+    self.MyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 120, 120, 30)];
+    [self.MyNameLabel setTextColor:[UIColor whiteColor]];
+    [self.MyNameLabel setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [self.MyNameLabel setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"SaveUserName"]];
+    [self.MyNameLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:self.MyNameLabel];
+    
+    
+    self.UserNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(170, 80, 120, 30)];
+    //[DayLabel setText:[NSString stringWithFormat:@"Day %ld/7", (long) [componets weekday]]];
+    [self.UserNameLabel setTextColor:[UIColor whiteColor]];
+    [self.UserNameLabel setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [self.UserNameLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:self.UserNameLabel];
+    
+
+    UIImageView *SelfRate1 = [[UIImageView alloc] initWithFrame:CGRectMake(31, 150, 12, 11)];
+    [SelfRate1 setImage:[UIImage imageNamed:@"Unstar"]];
+    [self.AcceptChallengeView addSubview:SelfRate1];
+    
+    UIImageView *SelfRate2 = [[UIImageView alloc] initWithFrame:CGRectMake(44, 150, 12, 11)];
+    [SelfRate2 setImage:[UIImage imageNamed:@"Unstar"]];
+    [self.AcceptChallengeView addSubview:SelfRate2];
+    
+    UIImageView *SelfRate3 = [[UIImageView alloc] initWithFrame:CGRectMake(57, 150, 12, 11)];
+    [SelfRate3 setImage:[UIImage imageNamed:@"Unstar"]];
+    [self.AcceptChallengeView addSubview:SelfRate3];
+    
+    UIImageView *SelfRate4 = [[UIImageView alloc] initWithFrame:CGRectMake(70, 150, 12, 11)];
+    [SelfRate4 setImage:[UIImage imageNamed:@"Unstar"]];
+    [self.AcceptChallengeView addSubview:SelfRate4];
+    
+    UIImageView *SelfRate5 = [[UIImageView alloc] initWithFrame:CGRectMake(83, 150, 12, 11)];
+    [SelfRate5 setImage:[UIImage imageNamed:@"Unstar"]];
+    [self.AcceptChallengeView addSubview:SelfRate5];
+    
+    if ([self.stringMyLevel intValue]>0 && [self.stringMyLevel intValue]<= 4)
+    {
+       
+        [SelfRate1 setImage:[UIImage imageNamed:@"StarIcon"]];
+    }
+    else if ([self.stringMyLevel intValue]>4 && [self.stringMyLevel intValue]<= 24)
+    {
+
+        [SelfRate1 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate2 setImage:[UIImage imageNamed:@"StarIcon"]];
+        
+    }
+    else if ([self.stringMyLevel intValue]>24 && [self.stringMyLevel intValue]<= 74){
+
+        [SelfRate1 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate2 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate3 setImage:[UIImage imageNamed:@"StarIcon"]];
+        
+    }
+    else if ([self.stringMyLevel intValue]>74 && [self.stringMyLevel intValue]<= 124){
+
+        [SelfRate1 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate2 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate3 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate4 setImage:[UIImage imageNamed:@"StarIcon"]];
+        
+    }
+    else if ([self.stringMyLevel intValue]>124){
+
+        [SelfRate1 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate2 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate3 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate4 setImage:[UIImage imageNamed:@"StarIcon"]];
+        [SelfRate5 setImage:[UIImage imageNamed:@"StarIcon"]];
+    }
+    
+    UILabel *laebelPointMy = [[UILabel alloc] initWithFrame:CGRectMake(0, 254, 140, 30)];
+    [laebelPointMy setText:@"Points"];
+    [laebelPointMy setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelPointMy setTextColor:[UIColor whiteColor]];
+    [laebelPointMy setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelPointMy];
+    
+    UILabel *laebelPointValue = [[UILabel alloc] initWithFrame:CGRectMake(0, 224, 80, 30)];
+    [laebelPointValue setText:self.stringmypoints];
+    [laebelPointValue setTextAlignment:NSTextAlignmentCenter];
+    [laebelPointValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [laebelPointValue setTextColor:[UIColor whiteColor]];
+    [laebelPointValue setBackgroundColor:[UIColor clearColor]];
+    [self.AcceptChallengeView addSubview:laebelPointValue];
+    
+    
+    UILabel *laebelPointMuser = [[UILabel alloc] initWithFrame:CGRectMake(178, 254, 140, 30)];
+    [laebelPointMuser setText:@"Points"];
+    [laebelPointMuser setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelPointMuser setTextColor:[UIColor whiteColor]];
+    [laebelPointMuser setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelPointMuser];
+
+    
+    self.laebelPointUserValue = [[UILabel alloc] initWithFrame:CGRectMake(178, 224, 140, 30)];
+    [self.laebelPointUserValue setText:@"0"];
+    [self.laebelPointUserValue setTextAlignment:NSTextAlignmentCenter];
+    [self.laebelPointUserValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [self.laebelPointUserValue setTextColor:[UIColor whiteColor]];
+    [self.laebelPointUserValue setBackgroundColor:[UIColor clearColor]];
+    [self.AcceptChallengeView addSubview:self.laebelPointUserValue];
+    
+    
+    UILabel *laebelPPGMy = [[UILabel alloc] initWithFrame:CGRectMake(0, 337, 140, 30)];
+    [laebelPPGMy setText:@"PPG"];
+    [laebelPPGMy setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelPPGMy setTextColor:[UIColor whiteColor]];
+    [laebelPPGMy setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelPPGMy];
+    
+    UILabel *laebelPPgValue = [[UILabel alloc] initWithFrame:CGRectMake(0, 310, 140, 30)];
+    [laebelPPgValue setText:self.stringMyPPG];
+    [laebelPPgValue setTextAlignment:NSTextAlignmentCenter];
+    [laebelPPgValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [laebelPPgValue setTextColor:[UIColor whiteColor]];
+    [laebelPPgValue setBackgroundColor:[UIColor clearColor]];
+    [self.AcceptChallengeView addSubview:laebelPPgValue];
+    
+    
+    UILabel *laebelPPGUser = [[UILabel alloc] initWithFrame:CGRectMake(178, 337, 140, 30)];
+    [laebelPPGUser setText:@"PPG"];
+    [laebelPPGUser setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelPPGUser setTextColor:[UIColor whiteColor]];
+    [laebelPPGUser setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelPPGUser];
+    
+    
+    self.laebelPPgUserValue = [[UILabel alloc] initWithFrame:CGRectMake(178, 310, 140, 30)];
+    [self.laebelPPgUserValue setText:@""];
+    [self.laebelPPgUserValue setTextAlignment:NSTextAlignmentCenter];
+    [self.laebelPPgUserValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [self.laebelPPgUserValue setTextColor:[UIColor whiteColor]];
+    [self.laebelPPgUserValue setBackgroundColor:[UIColor clearColor]];
+    [self.AcceptChallengeView addSubview:self.laebelPPgUserValue];
+    
+    
+
+    UILabel *laebelWl = [[UILabel alloc] initWithFrame:CGRectMake(0, 420, 140, 30)];
+    [laebelWl setText:@"W-L"];
+    [laebelWl setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelWl setTextColor:[UIColor whiteColor]];
+    // [laebelWl setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelWl];
+    
+    UILabel *laebelWLValue = [[UILabel alloc] initWithFrame:CGRectMake(0, 393, 140, 30)];
+    [laebelWLValue setText:self.StringMyWinLoss];
+    [laebelWLValue setTextAlignment:NSTextAlignmentCenter];
+    [laebelWLValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [laebelWLValue setTextColor:[UIColor whiteColor]];
+    [laebelWLValue setBackgroundColor:[UIColor clearColor]];
+    [self.AcceptChallengeView addSubview:laebelWLValue];
+    
+    UILabel *laebelWlUser = [[UILabel alloc] initWithFrame:CGRectMake(178, 420, 140, 30)];
+    [laebelWlUser setText:@"W-L"];
+    [laebelWlUser setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelWlUser setTextColor:[UIColor whiteColor]];
+    // [laebelWl setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelWlUser];
+    
+    
+    self.laebelWLValueUser = [[UILabel alloc] initWithFrame:CGRectMake(178, 393, 140, 30)];
+    [self.laebelWLValueUser setText:@""];
+    [self.laebelWLValueUser setTextAlignment:NSTextAlignmentCenter];
+    [self.laebelWLValueUser setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
+    [self.laebelWLValueUser setTextColor:[UIColor whiteColor]];
+    [self.laebelWLValueUser setBackgroundColor:[UIColor clearColor]];
+    [self.AcceptChallengeView addSubview:self.laebelWLValueUser];
+    
+    
+    UILabel *laebelRankMy = [[UILabel alloc] initWithFrame:CGRectMake(0, 503, 140, 30)];
+    [laebelRankMy setText:@"Rank"];
+    [laebelRankMy setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelRankMy setTextColor:[UIColor whiteColor]];
+    [laebelRankMy setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelRankMy];
+    
+    
+    UILabel *laebelRankMyValue = [[UILabel alloc] initWithFrame:CGRectMake(0, 477, 140, 30)];
+    [laebelRankMyValue setText:self.stringMyRank];
+    [laebelRankMyValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelRankMyValue setTextColor:[UIColor whiteColor]];
+    [laebelRankMyValue setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelRankMyValue];
+    
+    UILabel *laebelRankuser = [[UILabel alloc] initWithFrame:CGRectMake(178, 503, 140, 30)];
+    [laebelRankuser setText:@"Rank"];
+    [laebelRankuser setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [laebelRankuser setTextColor:[UIColor whiteColor]];
+    [laebelRankuser setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:laebelRankuser];
+    
+    self.laebelRankUserValue = [[UILabel alloc] initWithFrame:CGRectMake(178, 477, 140, 30)];
+    [self.laebelRankUserValue setText:@""];
+    [self.laebelRankUserValue setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
+    [self.laebelRankUserValue setTextColor:[UIColor whiteColor]];
+    [self.laebelRankUserValue setTextAlignment:NSTextAlignmentCenter];
+    [self.AcceptChallengeView addSubview:self.laebelRankUserValue];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

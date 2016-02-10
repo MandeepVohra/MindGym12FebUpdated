@@ -276,7 +276,9 @@
 
 #pragma mark - userInfoBoad
 
-- (void)_userInfoBoad {
+- (void)_userInfoBoad
+
+{
     CGFloat boxHeight = 60.0f;
 
     if (iPhone6Plus) {
@@ -450,7 +452,9 @@
     _avatar.contentMode = UIViewContentModeScaleAspectFill;
     _avatar.backgroundColor = [UIColor colorWithRed:4 / 255.0 green:4 / 255.0 blue:4 / 255.0 alpha:1.0f];
     [_box addSubview:_avatar];
+    
     _avatar.userInteractionEnabled = YES;
+    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(updatePhotoPressed)];
     [_avatar addGestureRecognizer:singleTap];
 

@@ -113,7 +113,7 @@
     [passwordTF autoSetDimension:ALDimensionHeight toSize:kRowHeight];
 
     hintView = [[UIView alloc] init];
-    hintView.backgroundColor = [UIColor colorWithRed:22.0 / 255.0f green:-0 / 255.0f blue:242.0 / 255.0f alpha:1.0f];
+    hintView.backgroundColor = [UIColor colorWithRed:44.0/255.0 green:151.0/255.0 blue:223.0/255.0 alpha:1.0];
     [self.view addSubview:hintView];
     [hintView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [hintView autoPinEdgeToSuperviewEdge:ALEdgeRight];

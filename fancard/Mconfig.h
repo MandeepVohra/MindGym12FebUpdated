@@ -54,10 +54,10 @@ static NSString *const kSocketURL = @"ws://52.27.33.107:2346";
 #define kAsapRegularFont @"Asap-Regular"
 
 //Color
-#define kMyRedColor [UIColor colorWithRed:153.0 / 255.0 green:0.0/255.0 blue:10 / 255.0 alpha:1.0f]
+#define kMyRedColor [UIColor colorWithRed:148.0 / 255.0 green:18.0/255.0 blue:26.0 / 255.0 alpha:1.0f]
 #define kLevelGray  [UIColor colorWithRed:46.0 / 255.0 green:46.0 / 255.0 blue:46.0 / 255.0 alpha:1.0f]
 #define kMyBlue     [UIColor colorWithRed:17.0f/255.0f green:-0 blue:254.0f/255.0f alpha:1.0f]
-
+#define KNewHeader  [UIColor colorWithRed:44.0/255.0 green:151.0/255.0 blue:223.0/255.0 alpha:1.0]
 /*   audio:
  */
 #define kTimeRunningOut @"Time Running Out.mp3"

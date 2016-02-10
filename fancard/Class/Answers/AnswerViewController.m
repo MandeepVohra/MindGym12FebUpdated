@@ -15,6 +15,7 @@
 #import "NSDate+FormatDateString.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
+#import "BaseViewController.h"
 
 typedef NS_ENUM(NSInteger, AnswerType) {
     botType = 2,

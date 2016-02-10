@@ -118,18 +118,19 @@
     _sendChallenge.userInteractionEnabled = YES;
     _sendChallenge.backgroundColor = [UIColor clearColor];
     [_sendChallenge setBackgroundImage:[UIImage imageNamed:@"pic_ball_Leader.png"] forState:UIControlStateNormal];
-    [_sendChallenge addTarget:self action:@selector(challenge) forControlEvents:UIControlEventTouchUpInside];
+    [_sendChallenge addTarget:self action:@selector(challenge:) forControlEvents:UIControlEventTouchUpInside];
     [_belowView addSubview:_sendChallenge];
 }
 
-- (void)addFriend {
+- (void)addFriend
+{
     NSLog(@"addFriend");
     if (_FDelegate && [_FDelegate respondsToSelector:@selector(addFriendByUserModel:)]) {
         [_FDelegate addFriendByUserModel:self.topModel];
     }
 }
 
-- (void)challenge {
+- (void)challenge:(UIButton *)butt {
     NSLog(@"send challenge");
     if (_delegate && [_delegate respondsToSelector:@selector(toChallenge:withRank:)]) {
         [_delegate toChallenge:self.topModel withRank:_rankIndex];

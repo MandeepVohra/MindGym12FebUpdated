@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3D457679D304B3F1E65170D64B9CBABCA87ACD4E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "95DB0D9B9074669535C70E6439CEB2FC29E746CD" : 0,
+    "3D457679D304B3F1E65170D64B9CBABCA87ACD4E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "89066800-649B-46ED-9EEF-0F76FB2ACAE3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "95DB0D9B9074669535C70E6439CEB2FC29E746CD" : "fancard_ios",
+    "3D457679D304B3F1E65170D64B9CBABCA87ACD4E" : "MindGym-iOS-master\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fancard",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fancard.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MandeepVohra\/MindGym-iOS-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3D457679D304B3F1E65170D64B9CBABCA87ACD4E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/git.oschina.net\/wuchangqi\/fancard_ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95DB0D9B9074669535C70E6439CEB2FC29E746CD"
+    }
+  ]
+}

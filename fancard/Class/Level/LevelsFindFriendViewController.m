@@ -112,25 +112,6 @@
     [manager GET:kServerURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (responseObject != nil) {
 
-//            NSArray *array = responseObject;
-//            if (array.count > 0) {
-//                if (searchPageNo == 1) {
-//                    searchBabyArray = [array mutableCopy];
-//                } else {
-//                    [searchBabyArray addObjectsFromArray:array];
-//                }
-//            }
-//            else {
-//                searchBabyArray = [[NSMutableArray alloc] init];
-//            }
-//
-//            [weakSelf.searchDisplayController.searchResultsTableView reloadData];
-//
-//            hasNextSearchPage = (array.count == 30);
-//
-//            if (hasNextSearchPage) {
-//                searchPageNo = searchPageNo + 1;
-//            }
             _searchArray = [[NSMutableArray alloc] init];
             NSDictionary *dataDic = (NSDictionary *) [responseObject objectForKey:@"data"];
 

@@ -39,4 +39,6 @@
 @property(nonatomic, strong) CWStarRateView *myStarRateView;
 @property(nonatomic, strong) UILabel *wonLost;
 
+- (void)toChallenge:(UserInfo *)userModels withRank:rank;
+
 @end

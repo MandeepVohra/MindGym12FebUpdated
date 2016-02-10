@@ -122,8 +122,8 @@
 
 
     //Setting the global navigation bar color and font color
-    [[UINavigationBar appearance] setBarTintColor:kMyRedColor];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:KNewHeader];
+    [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
 
     NSURL *portraitUrl = [[NSBundle mainBundle] URLForResource:@"FC-Stamp-2" withExtension:@"mp4"];
 
@@ -180,24 +180,26 @@
 }
 
 - (void)splashVideoComplete:(XOSplashVideoController *)splashVideo {
-    self.window.rootViewController = _menuCtrl;
+    MainViewController *main = [[MainViewController alloc] init];
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:main];
+    [navCtrl.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    self.window.rootViewController = navCtrl;
 }
 
 - (void)splashVideoLoaded:(XOSplashVideoController *)splashVideo {
  //   HomeViewController *homeCtrl = [[HomeViewController alloc] init];
    // UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:homeCtrl];
     
-    MainViewController *main = [[MainViewController alloc] init];
-    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:main];
     
     
-    AnswerViewController *leftCtrl = [[AnswerViewController alloc] init];
-    TrainerViewController *rightCtrl = [[TrainerViewController alloc] init];
+    
+   // AnswerViewController *leftCtrl = [[AnswerViewController alloc] init];
+    //TrainerViewController *rightCtrl = [[TrainerViewController alloc] init];
 
-    _menuCtrl = [[DDMenuController alloc] initWithRootViewController:navCtrl];
+   // _menuCtrl = [[DDMenuController alloc] initWithRootViewController:navCtrl];
 
-    _menuCtrl.leftViewController = leftCtrl;
-    _menuCtrl.rightViewController = rightCtrl;
+    //_menuCtrl.leftViewController = leftCtrl;
+    //_menuCtrl.rightViewController = rightCtrl;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

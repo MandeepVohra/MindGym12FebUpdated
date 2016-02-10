@@ -17,4 +17,6 @@
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, assign) BOOL isFindFriend;
 
+- (void)toChallenge:(UserInfo *)userModels withRank:rank;
+
 @end

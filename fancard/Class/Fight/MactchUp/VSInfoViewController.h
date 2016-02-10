@@ -28,5 +28,8 @@
 @property (nonatomic, assign) NSInteger friendId;
 @property (nonatomic, strong) UserInfo *friendModel;
 @property (nonatomic, strong) BotModel *botModel;
-
+@property (nonatomic ,retain) UIView *AcceptChallengeView;
+@property (nonatomic ,retain) UIImageView *MyacceptChallengeImageView,*UseracceptChallengeImageView;
+@property (nonatomic ,retain) UILabel *MyNameLabel,*UserNameLabel,*laebelPPgUserValue,*laebelWLValueUser,*laebelRankUserValue,*laebelPointUserValue;
+@property (nonatomic ,retain) NSString *stringMyName ,*stringmypoints,* stringMyRank,*stringMyPPG,*StringMyWinLoss,*stringMyLevel;
 @end

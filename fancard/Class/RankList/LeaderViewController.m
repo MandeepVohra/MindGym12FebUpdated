@@ -28,6 +28,8 @@
 #import "NSDictionary+NotNULL.h"
 #import "LevelsFindFriendViewController.h"
 #import "NSString+StringFormatDate.h"
+#import "LeadersCell.h"
+
 
 typedef NS_ENUM(NSInteger, RankListTimeType) {
     thisWeekType = 1,
@@ -40,7 +42,7 @@ typedef NS_ENUM(NSInteger, RanType) {
     thirdPartType = 3,
 };
 
-@interface LeaderViewController () <UITableViewDelegate, UITableViewDataSource> {
+@interface LeaderViewController () <UITableViewDelegate, UITableViewDataSource,LeadersDelegate,addFriendDelegate> {
 
 //-----------titleView---------------
     UIView *_titleView;
@@ -642,6 +644,12 @@ typedef NS_ENUM(NSInteger, RanType) {
         }
     }
 
+    
+    
+    
+    
+    
+    
     cell.rankIndex = @(indexPath.row + 1).stringValue;
 
     UserInfo *tops = _userArray[indexPath.row];
@@ -663,7 +671,9 @@ typedef NS_ENUM(NSInteger, RanType) {
     NSString *wonLost = [NSString stringWithFormat:@"%d-%d", tops.number_week_win, tops.number_week_lost];
     cell.wonLost.text = wonLost;
     cell.userName.text = [NSString stringWithFormat:@"%ld.%@", (long) indexPath.row + 1, name];
-    if ((tops.type.intValue == 3) || ((int) userId == tops.id.intValue)) {
+    
+    if ((tops.type.intValue == 3) || ((int) userId == tops.id.intValue))
+    {
         [cell.sendChallenge setBackgroundImage:[UIImage imageNamed:@"pic_ball_Ans.png"] forState:UIControlStateNormal];
     } else {
 
@@ -683,7 +693,19 @@ typedef NS_ENUM(NSInteger, RanType) {
         }
 
     }
-
+    [cell.sendChallenge addTarget:self action:@selector(SetChallangeMethod:) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *buttonChallenge = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [buttonChallenge addTarget:self
+//                        action:@selector(SetChallangeMethod:)
+//              forControlEvents:UIControlEventTouchUpInside];
+//    [buttonChallenge setBackgroundImage:[UIImage imageNamed:@"pic_ball_Leader.png"] forState:UIControlStateNormal];
+//    CGSize imageSize = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pic_ball_Leader" ofType:@"png"]].size;
+//    float myWidth = 91 * imageSize.width / imageSize.height;
+//    [buttonChallenge setTag:indexPath.row];
+//    buttonChallenge.frame = CGRectMake(kScreenWidth - myWidth + 35, -3, myWidth, 91);
+//    [cell.contentView addSubview:buttonChallenge];
+    
+    
     return cell;
 }
 
@@ -877,6 +899,11 @@ typedef NS_ENUM(NSInteger, RanType) {
 
 //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
 //    [self presentViewController:nav animated:YES completion:nil];
+}
+
+
+-(void)SetChallangeMethod:(UIButton *)butt{
+    
 }
 
 - (void)didReceiveMemoryWarning {

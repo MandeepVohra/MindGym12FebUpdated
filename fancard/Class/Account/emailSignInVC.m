@@ -174,7 +174,8 @@
         email = emailTF.text;
         password = passwordTF.text;
         [self postTokenMethod];
-    } else {
+    }
+    else {
         [[CMOpenALSoundManager singleton] playSoundWithID:3];
         NSString *title = @"Please Fill\n The Blank Space";
 

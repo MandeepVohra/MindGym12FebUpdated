@@ -47,6 +47,12 @@
     [self addSubview:_chaMessage];
     _chaMessage.separatorStyle = UITableViewCellSeparatorStyleNone;
     _chaMessage.tableHeaderView = _chaNumView;
+    
+    
+    
+    
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -66,7 +72,9 @@
     cell.acDelegate = self;
     cell.oppUserName.text = [NSString stringWithFormat:@"%@ %@", userInfo.firstname, userInfo.lastname];
     cell.challenger = userInfo;
-    [cell.oppUserPhoto sd_setImageWithURL:[NSURL URLWithString:userInfo.avatar]];
+    //[cell.oppUserPhoto sd_setImageWithURL:[NSURL URLWithString:userInfo.avatar]];
+    
+    [cell.oppUserPhoto sd_setImageWithURL:[NSURL URLWithString:userInfo.avatar] placeholderImage:[UIImage imageNamed:@"ImagePlaceholder"]];
 
     return cell;
 }
@@ -108,11 +116,11 @@
 
 - (void)_initView {
     _cellView = [[UIView alloc] initWithFrame:CGRectMake(0, 5, kScreenWidth - 20, 46)];
-    _cellView.backgroundColor = [UIColor clearColor];
+    _cellView.backgroundColor = [UIColor blackColor];
     [self.contentView addSubview:_cellView];
     _oppUserPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0, 5, 34, 34)];
     _oppUserPhoto.contentMode = UIViewContentModeScaleAspectFit;
-    _oppUserPhoto.backgroundColor = [UIColor whiteColor];
+    _oppUserPhoto.backgroundColor = [UIColor clearColor];
     [_cellView addSubview:_oppUserPhoto];
 
     _oppUserName = [[UILabel alloc] initWithFrame:CGRectMake(_oppUserPhoto.right + 10, 5, 160, 34)];

@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 MEETStudio. All rights reserved.
 //
 
-#import "BaseViewController.h"
 #import "PagedFlowView.h"
+#import "BaseViewController.h"
+
+@class BaseViewController;
 
 @interface AnswerViewController : BaseViewController <PagedFlowViewDelegate, PagedFlowViewDataSource>
 
