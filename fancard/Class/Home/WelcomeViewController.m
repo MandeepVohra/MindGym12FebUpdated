@@ -442,11 +442,15 @@
     
     
 }
+
 - (void)_homeAction {
    // [self.navigationController popToRootViewControllerAnimated:YES];
+    [[NSUserDefaults standardUserDefaults] setObject:@"LoginSuccessfull" forKey:@"SaveLogin"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     MainViewController *mainView = [[MainViewController alloc] init];
     [self.navigationController pushViewController:mainView animated:YES];
 }
+
 /*
 -(void)CallNewServiceWithFirstname:(NSString *)firstname lastname:(NSString *)lastname FacebookId:(NSString *)token Command:(NSString *)commandNew PlatForm:(NSString *)plat{
     

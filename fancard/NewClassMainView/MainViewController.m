@@ -92,7 +92,7 @@ typedef NS_ENUM(NSInteger, RanType) {
     UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:blur];
     effectView.frame = self.largeImage.frame;
-    [self.largeImage addSubview:effectView];
+    //[self.largeImage addSubview:effectView];
     [self.MainFrontView addSubview:self.largeImage];
     
     
@@ -126,7 +126,7 @@ typedef NS_ENUM(NSInteger, RanType) {
     [self.MainFrontView addSubview:ImagePropilepic];
     
    
-    self.NameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 128, 170, 30)];
+    self.NameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 128, 320, 30)];
     [self.NameLabel setTextColor:[UIColor whiteColor]];
     [self.NameLabel setFont:[UIFont fontWithName:@"Montserrat-Regular" size:14.0]];
     [self.NameLabel setTextAlignment:NSTextAlignmentCenter];
@@ -485,23 +485,23 @@ typedef NS_ENUM(NSInteger, RanType) {
             
             
             
-            UIImageView *SelfRate1 = [[UIImageView alloc] initWithFrame:CGRectMake(120, 158, 12, 11)];
+            UIImageView *SelfRate1 = [[UIImageView alloc] initWithFrame:CGRectMake(124, 158, 12, 11)];
             [SelfRate1 setImage:[UIImage imageNamed:@"Unstar"]];
             [self.MainFrontView addSubview:SelfRate1];
             
-            UIImageView *SelfRate2 = [[UIImageView alloc] initWithFrame:CGRectMake(135, 158, 12, 11)];
+            UIImageView *SelfRate2 = [[UIImageView alloc] initWithFrame:CGRectMake(139, 158, 12, 11)];
             [SelfRate2 setImage:[UIImage imageNamed:@"Unstar"]];
             [self.MainFrontView addSubview:SelfRate2];
             
-            UIImageView *SelfRate3 = [[UIImageView alloc] initWithFrame:CGRectMake(150, 158, 12, 11)];
+            UIImageView *SelfRate3 = [[UIImageView alloc] initWithFrame:CGRectMake(154, 158, 12, 11)];
             [SelfRate3 setImage:[UIImage imageNamed:@"Unstar"]];
             [self.MainFrontView addSubview:SelfRate3];
             
-            UIImageView *SelfRate4 = [[UIImageView alloc] initWithFrame:CGRectMake(165, 158, 12, 11)];
+            UIImageView *SelfRate4 = [[UIImageView alloc] initWithFrame:CGRectMake(169, 158, 12, 11)];
             [SelfRate4 setImage:[UIImage imageNamed:@"Unstar"]];
             [self.MainFrontView addSubview:SelfRate4];
 
-            UIImageView *SelfRate5 = [[UIImageView alloc] initWithFrame:CGRectMake(180, 158, 12, 11)];
+            UIImageView *SelfRate5 = [[UIImageView alloc] initWithFrame:CGRectMake(183, 158, 12, 11)];
             [SelfRate5 setImage:[UIImage imageNamed:@"Unstar"]];
             [self.MainFrontView addSubview:SelfRate5];
             
@@ -682,7 +682,7 @@ typedef NS_ENUM(NSInteger, RanType) {
     [self.BottomImageFrend setImage:[UIImage imageNamed:@"BlueArrowLine"]];
     [viewSegment addSubview:self.BottomImageFrend];
     
-    self.Top100Label = [[UILabel alloc] initWithFrame:CGRectMake(107, 2, 80, 30)];
+    self.Top100Label = [[UILabel alloc] initWithFrame:CGRectMake(116, 2, 80, 30)];
     [self.Top100Label setText:@"Top 100"];
     [self.Top100Label setTextAlignment:NSTextAlignmentCenter];
     [self.Top100Label setFont:[UIFont fontWithName:@"Montserrat-SemiBold" size:15.0]];
@@ -693,7 +693,7 @@ typedef NS_ENUM(NSInteger, RanType) {
     [self.Bottom100Image setImage:[UIImage imageNamed:@"BlueArrowLine"]];
     [viewSegment addSubview:self.Bottom100Image];
     
-    self.VerifiedLabel = [[UILabel alloc] initWithFrame:CGRectMake(217, 2, 80, 30)];
+    self.VerifiedLabel = [[UILabel alloc] initWithFrame:CGRectMake(225, 2, 80, 30)];
     [self.VerifiedLabel setText:@"Verified"];
     [self.VerifiedLabel setTextAlignment:NSTextAlignmentCenter];
     [self.VerifiedLabel setFont:[UIFont fontWithName:@"Montserrat-SemiBold" size:15.0]];
@@ -826,11 +826,11 @@ typedef NS_ENUM(NSInteger, RanType) {
     [cell.NameLabel setFont:[UIFont fontWithName:@"Montserrat-Regular" size:13.0]];
     [cell.NameLabel setTextColor:[UIColor colorWithRed:44.0/255.0 green:62.0/255.0 blue:80.0/255 alpha:1.0]];
     
-    [cell.WonLostLabel setText:[NSString stringWithFormat:@"%ldW-%ldL",[[[self._userArray objectAtIndex:indexPath.row] valueForKey:@"number_win"] integerValue],[[[self._userArray objectAtIndex:indexPath.row] valueForKey:@"number_lost"] integerValue]]];
+    [cell.WonLostLabel setText:[NSString stringWithFormat:@"%dW-%dL",[[[self._userArray objectAtIndex:indexPath.row] valueForKey:@"number_win"] integerValue],[[[self._userArray objectAtIndex:indexPath.row] valueForKey:@"number_lost"] integerValue]]];
     [cell.WonLostLabel setFont:[UIFont fontWithName:@"Montserrat-Light" size:10.0]];
     [cell.WonLostLabel setTextColor:[UIColor colorWithRed:44.0/255.0 green:62.0/255.0 blue:80.0/255 alpha:1.0]];
     
-    [cell.ProfilePic sd_setImageWithURL:[NSURL URLWithString:[[self._userArray objectAtIndex:indexPath.row] valueForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"PlaceholderImageWithoutBorder"]];
+    [cell.ProfilePic sd_setImageWithURL:[NSURL URLWithString:[[self._userArray objectAtIndex:indexPath.row] valueForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"SmallPlaceholder"]];
     
     [cell.ChallengeButton setTag:indexPath.row];
     if ([stringButtonOption isEqualToString:@"Top100"] || [stringButtonOption isEqualToString:@"Verify"]) {

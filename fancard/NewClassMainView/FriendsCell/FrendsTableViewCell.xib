@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2005925B-09B9-4739-8145-5A6AD721C02D" id="Nfw-pv-Bpt">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="73728C82-7EAE-4BCD-8569-66C79E109666" id="Nfw-pv-Bpt">
                         <rect key="frame" x="14" y="3" width="69" height="69"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -121,7 +121,7 @@
         </imageView>
     </objects>
     <resources>
-        <image name="2005925B-09B9-4739-8145-5A6AD721C02D" width="82" height="81">
+        <image name="73728C82-7EAE-4BCD-8569-66C79E109666" width="82" height="81">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

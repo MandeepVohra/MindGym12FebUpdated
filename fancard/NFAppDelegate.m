@@ -125,16 +125,28 @@
     [[UINavigationBar appearance] setBarTintColor:KNewHeader];
     [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
 
-    NSURL *portraitUrl = [[NSBundle mainBundle] URLForResource:@"FC-Stamp-2" withExtension:@"mp4"];
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"SaveLogin"] isEqualToString:@"LoginSuccessfull"]) {
+        MainViewController *main = [[MainViewController alloc] init];
+        UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:main];
+        [navCtrl.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+        self.window.rootViewController = navCtrl;
+    }
+    else{
+        NSURL *portraitUrl = [[NSBundle mainBundle] URLForResource:@"FC-Stamp-2" withExtension:@"mp4"];
+        
+        XOSplashVideoController *controller =
+        [[XOSplashVideoController alloc] initWithVideoPortraitUrl:portraitUrl
+                                                portraitImageName:nil
+                                                     landscapeUrl:nil
+                                               landscapeImageName:nil
+                                                         delegate:self];
+        
+        self.window.rootViewController = controller;
+    }
+    
 
-    XOSplashVideoController *controller =
-            [[XOSplashVideoController alloc] initWithVideoPortraitUrl:portraitUrl
-                                                    portraitImageName:nil
-                                                         landscapeUrl:nil
-                                                   landscapeImageName:nil
-                                                             delegate:self];
-
-    self.window.rootViewController = controller;
+    
 
 //    MyFightViewController *vc = [[MyFightViewController alloc] init];
 //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];

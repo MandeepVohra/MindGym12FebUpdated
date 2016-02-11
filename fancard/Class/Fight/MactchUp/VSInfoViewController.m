@@ -554,6 +554,7 @@
     if (_joinCD24 <= 0) {
         [joinTimer24 invalidate];
 //        canJoinGame = NO;
+        [self.AcceptChallengeView setHidden:YES];
         [_backButtonLeft setHidden:YES];
         [_logo setHidden:YES];
         [_joinGame addSubview:_backButtonRight];

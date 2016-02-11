@@ -21,7 +21,8 @@
     [self.LabelCount setTextAlignment:NSTextAlignmentCenter];
     [self.LabelCount setFont:[UIFont fontWithName:@"Montserrat-Regular" size:10.0]];
     [self.LabelCount setTextColor:[UIColor whiteColor]];
-    
+    [[self.LabelCount layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+    [[self.LabelCount layer] setBorderWidth:1.0];
     self.ChallengeButton.layer.cornerRadius = 15;
     
 }
